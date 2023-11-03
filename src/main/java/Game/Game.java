@@ -14,7 +14,6 @@ public class Game {
     static List<Integer> initPlayground() {
         Random random = new Random();
         List<Integer> playground = new ArrayList<>();
-
         for (int i = 0; i < 10; i++) {
             playground.add(random.nextInt(10));
         }
@@ -70,18 +69,14 @@ public class Game {
             if (checkIsEmpty(playground)) endThisGameEmpty = true;
             if (!checkIsIdenticalNumbers(playground)) endThisGameIdentical = true;
             if (!checkSumIsNine(playground)) endThisGameSumNine = true;
-
             if (endThisGameEmpty || (endThisGameIdentical && endThisGameSumNine)) {
                 endGame(resultScore);
                 printReasonsForEndingTheGame(playground);
                 break;
             }
-
             printPlayground(playground);
-
             int number1 = getUserNumber();
             int number2 = getUserNumber();
-
             resultScore += checkArray(playground, number1, number2);
         }
     }
