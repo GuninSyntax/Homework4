@@ -36,8 +36,7 @@ public class Game {
     static void printGameRules() {
         System.out.println("*************************");
         System.out.println("Добро пожаловать в игру!");
-        System.out.println("*************************");
-        System.out.println();
+        System.out.println("*************************\n");
         System.out.println("*************************");
         System.out.println("ПРАВИЛА ИГРЫ:");
         System.out.println("1. Дана последовательность целых чисел (от 0 до 9)");
@@ -45,10 +44,8 @@ public class Game {
         System.out.println("3. Выбранные числа должны быть ОДИНАКОВЫМИ или В СУММЕ ДАЮТ 9");
         System.out.println("4. За каждое вычеркивание 2-х рядом стоящих чисел вы получие 1 очко!");
         System.out.println("5. Игра заканчивается, когда не останется возможных комбинаций или чисел не останется");
-        System.out.println("*************************");
-        System.out.println();
-        System.out.println("Приятной игры!");
-        System.out.println();
+        System.out.println("*************************\n");
+        System.out.println("Приятной игры!\n");
     }
 
     static boolean readyToGame() {
@@ -170,15 +167,13 @@ public class Game {
     }
 
     static void printPlayground(List<Integer> playground) {
-        System.out.print("На данный момент у нас есть следующие числа: ");
-        System.out.println(playground);
+        System.out.println("На данный момент у нас есть следующие числа: " + playground);
     }
 
     static void endGame(int resultScore) {
         System.out.println("*************************");
         System.out.println("ИГРА ОКОНЧЕНА!");
-        System.out.println("*************************");
-        System.out.println();
+        System.out.println("*************************\n");
         System.out.println("Ваш счет: " + resultScore);
     }
 
