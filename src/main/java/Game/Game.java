@@ -58,15 +58,8 @@ public class Game {
 
     static void gameProcess(List<Integer> playground) {
         int resultScore = 0;
-        boolean endThisGameEmpty = false;
-        boolean endThisGameIdentical = false;
-        boolean endThisGameSumNine = false;
-
         while (true) {
-            if (checkIsEmpty(playground)) endThisGameEmpty = true;
-            if (!checkIsIdenticalNumbers(playground)) endThisGameIdentical = true;
-            if (!checkSumIsNine(playground)) endThisGameSumNine = true;
-            if (endThisGameEmpty || (endThisGameIdentical && endThisGameSumNine)) {
+            if (checkIsEmpty(playground) || (!checkIsIdenticalNumbers(playground) && !checkSumIsNine(playground))) {
                 endGame(resultScore);
                 printReasonsForEndingTheGame(playground);
                 break;
