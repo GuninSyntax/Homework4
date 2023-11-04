@@ -17,6 +17,18 @@ public class Game {
         for (int i = 0; i < 10; i++) {
             playground.add(random.nextInt(10));
         }
+        playground = checkFirstArray(playground);
+        return playground;
+    }
+
+    static List<Integer> checkFirstArray(List<Integer> playground) {
+        while (true) {
+            if (checkIsIdenticalNumbers(playground) || checkSumIsNine(playground)) {
+                break;
+            } else {
+                playground = initPlayground();
+            }
+        }
         return playground;
     }
 
@@ -97,11 +109,11 @@ public class Game {
         int result = 0;
         for (int i = 1; i < playground.size(); i++) {
             for (int j = i - 1; j < i; j++) {
-                if ((playground.get(i) == number1 || playground.get(i) == number2) &&
-                        (playground.get(j) == number1 || playground.get(j) == number2)) {
+                if ((playground.get(i) == number1 && playground.get(j) == number2) ||
+                        (playground.get(j) == number1) && playground.get(i) == number2) {
                     if (playground.get(i).equals(playground.get(j))) {
                         result = 1;
-                        playground.remove(i);
+                        playground.remove(j);
                         playground.remove(j);
                         System.out.println("\n*************************");
                         System.out.println("Отлично! Вы нашли 2 одинаковых числа, которые стоят рядом!");
@@ -118,11 +130,11 @@ public class Game {
         int result = 0;
         for (int i = 1; i < playground.size(); i++) {
             for (int j = i - 1; j < i; j++) {
-                if ((playground.get(i) == number1 || playground.get(i) == number2) &&
-                        playground.get(j) == number1 || playground.get(j) == number2) {
-                    if (playground.get(i) + playground.get(j) == 9) {
+                if ((playground.get(i) == number1 && playground.get(j) == number2) ||
+                        (playground.get(j) == number1) && playground.get(i) == number2) {
+                    if (playground.get(j) + playground.get(i) == 9) {
                         result = 1;
-                        playground.remove(i);
+                        playground.remove(j);
                         playground.remove(j);
                         System.out.println("\n*************************");
                         System.out.println("Отлично! Вы нашли числа, которые дают в сумме 9!");
@@ -143,7 +155,10 @@ public class Game {
         boolean result = false;
         for (int i = 1; i < playground.size(); i++) {
             for (int j = i - 1; j < i; j++) {
-                if (playground.get(i).equals(playground.get(j))) result = true;
+                if (playground.get(i).equals(playground.get(j))) {
+                    result = true;
+                    break;
+                }
             }
         }
         return result;
@@ -153,7 +168,10 @@ public class Game {
         boolean result = false;
         for (int i = 1; i < playground.size(); i++) {
             for (int j = i - 1; j < i; j++) {
-                if (playground.get(i) + playground.get(j) == 9) result = true;
+                if (playground.get(i) + playground.get(j) == 9) {
+                    result = true;
+                    break;
+                }
             }
         }
         return result;

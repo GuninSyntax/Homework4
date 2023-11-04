@@ -17,8 +17,6 @@ public class Apple {
                 break;
             default:
                 result = declension[0];
-                break;
-
         }
 
         System.out.println(name + " хранит у себя " + apples + " " +result);
