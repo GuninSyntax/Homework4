@@ -5,7 +5,6 @@ public class Apple {
         String[] declension = {"яблок", "яблоко", "яблока"};
         String result = null;
         int remainder = apples % 10;
-
         switch (remainder) {
             case 1:
                 result = apples == 11 || apples > 100? declension[0] : declension[1];
@@ -18,7 +17,6 @@ public class Apple {
             default:
                 result = declension[0];
         }
-
         System.out.println(name + " хранит у себя " + apples + " " +result);
     }
 
