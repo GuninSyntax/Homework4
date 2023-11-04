@@ -62,10 +62,8 @@ public class Game {
 
     static boolean readyToGame() {
         Scanner scanner = new Scanner(System.in);
-        boolean result = false;
         System.out.print("Вы готовы начать? (да/нет): ");
-        result = scanner.nextLine().equalsIgnoreCase("да") ? true : false;
-        return result;
+        return scanner.nextLine().equalsIgnoreCase("да") ? true : false;
     }
 
     static void gameProcess(List<Integer> playground) {
