@@ -110,7 +110,7 @@ public class Game {
                 if ((playground.get(i) == number1 && playground.get(j) == number2) ||
                         (playground.get(j) == number1) && playground.get(i) == number2) {
                     if (playground.get(i).equals(playground.get(j))) {
-                        result = 1;
+                        result++;
                         playground.remove(j);
                         playground.remove(j);
                         System.out.println("\n*************************");
@@ -131,7 +131,7 @@ public class Game {
                 if ((playground.get(i) == number1 && playground.get(j) == number2) ||
                         (playground.get(j) == number1) && playground.get(i) == number2) {
                     if (playground.get(j) + playground.get(i) == 9) {
-                        result = 1;
+                        result++;
                         playground.remove(j);
                         playground.remove(j);
                         System.out.println("\n*************************");
