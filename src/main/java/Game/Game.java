@@ -11,12 +11,29 @@ public class Game {
         startGame(playground);
     }
 
+//    static List<Integer> initPlayground() {
+//        Random random = new Random();
+//        List<Integer> playground = new ArrayList<>();
+//        for (int i = 0; i < 10; i++) {
+//            playground.add(random.nextInt(10));
+//        }
+//        playground = checkFirstArray(playground);
+//        return playground;
+//    }
+
     static List<Integer> initPlayground() {
         Random random = new Random();
         List<Integer> playground = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
-            playground.add(random.nextInt(10));
-        }
+        playground.add(7);
+        playground.add(2);
+        playground.add(2);
+        playground.add(7);
+        playground.add(2);
+        playground.add(7);
+        playground.add(2);
+        playground.add(7);
+        playground.add(2);
+        playground.add(1);
         playground = checkFirstArray(playground);
         return playground;
     }
@@ -137,6 +154,7 @@ public class Game {
                         System.out.println("\n*************************");
                         System.out.println("Отлично! Вы нашли числа, которые дают в сумме 9!");
                         System.out.println("*************************\n");
+                        i--;
                         break;
                     }
                 }
