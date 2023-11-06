@@ -116,6 +116,7 @@ public class Game {
                         System.out.println("\n*************************");
                         System.out.println("Отлично! Вы нашли 2 одинаковых числа, которые стоят рядом!");
                         System.out.println("*************************\n");
+                        i--;
                         break;
                     }
                 }
