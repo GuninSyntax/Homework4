@@ -7,7 +7,7 @@ public class Apple {
         int remainder = apples % 10;
         switch (remainder) {
             case 1:
-                result = apples == 11 || apples > 100? declension[0] : declension[1];
+                result = apples % 100 == 11 ? declension[0] : declension[1];
                 break;
             case 2:
             case 3:
